@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PositionRepository extends JpaRepository<Position,Long> {
-    Position findFirstByOrderByReceiveTimeDesc();
+    Position findFirstByDeviceIdOrderByReceiveTimeDesc(long id);
 }

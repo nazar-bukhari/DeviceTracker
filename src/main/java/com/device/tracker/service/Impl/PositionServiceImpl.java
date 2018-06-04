@@ -16,8 +16,8 @@ public class PositionServiceImpl implements PositionService {
 
 
     @Override
-    public Position getPosition() throws ApplicationException {
-        return positionRepository.findFirstByOrderByReceiveTimeDesc();
+    public Position getPosition(final long deviceId) throws ApplicationException {
+        return positionRepository.findFirstByDeviceIdOrderByReceiveTimeDesc(deviceId);
     }
 
     @Override

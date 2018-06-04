@@ -5,6 +5,6 @@ import com.device.tracker.exception.ApplicationException;
 
 public interface PositionService {
 
-    Position getPosition() throws ApplicationException;
+    Position getPosition(long deviceId) throws ApplicationException;
     Position add(final Position position) throws ApplicationException;
 }
