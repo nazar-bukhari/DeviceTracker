@@ -17,7 +17,6 @@ public class DeviceController {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Device addDevice(final @RequestBody Device device) throws ApplicationException {
-
         return deviceService.add(device);
     }
 
