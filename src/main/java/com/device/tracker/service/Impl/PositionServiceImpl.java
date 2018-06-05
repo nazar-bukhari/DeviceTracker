@@ -8,6 +8,8 @@ import com.device.tracker.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PositionServiceImpl implements PositionService {
 
@@ -16,8 +18,8 @@ public class PositionServiceImpl implements PositionService {
 
 
     @Override
-    public Position getPosition(final long deviceId) throws ApplicationException {
-        return positionRepository.findFirstByDeviceIdOrderByReceiveTimeDesc(deviceId);
+    public List<Position> getPosition(final long deviceId) throws ApplicationException {
+        return positionRepository.findTop2ByDeviceIdOrderByReceiveTimeDesc(deviceId);
     }
 
     @Override

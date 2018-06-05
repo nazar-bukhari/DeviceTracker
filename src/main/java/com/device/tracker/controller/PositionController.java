@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/position")
@@ -17,7 +19,7 @@ public class PositionController {
 
     @RequestMapping(path = "/{deviceId}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    private Position getLastPosition(final @PathVariable long deviceId) throws ApplicationException {
+    private List<Position> getLastPosition(final @PathVariable long deviceId) throws ApplicationException {
         return positionService.getPosition(deviceId);
     }
 
