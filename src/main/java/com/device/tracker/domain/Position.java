@@ -1,6 +1,7 @@
 package com.device.tracker.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -17,12 +18,12 @@ public class Position {
     private Device device;
 
     @NotNull
-    @Size(min = 2)
-    private String latitude;
+    @Min(2)
+    private double latitude;
 
     @NotNull
-    @Size(min = 2)
-    private String longitude;
+    @Min(2)
+    private double longitude;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date receiveTime;
@@ -43,19 +44,19 @@ public class Position {
         this.device = device;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
