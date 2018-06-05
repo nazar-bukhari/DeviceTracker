@@ -11,6 +11,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DeviceServiceImpl implements DeviceService {
 
@@ -52,6 +54,11 @@ public class DeviceServiceImpl implements DeviceService {
         }
 
         return deviceRepository.saveAndFlush(device);
+    }
+
+    @Override
+    public List<Device> getAllDevice() throws ApplicationException {
+        return null;
     }
 
     @Override
