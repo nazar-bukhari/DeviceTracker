@@ -16,10 +16,9 @@ public class PositionServiceImpl implements PositionService {
     @Autowired
     private PositionRepository positionRepository;
 
-
     @Override
     public List<Position> getPosition(final long deviceId) throws ApplicationException {
-        return positionRepository.findTop2ByDeviceIdOrderByReceiveTimeDesc(deviceId);
+        return positionRepository.findTop2ByDeviceIdAndLiveTrueOrderByReceiveTimeDesc(deviceId);
     }
 
     @Override

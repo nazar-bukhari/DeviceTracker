@@ -3,7 +3,6 @@ package com.device.tracker.domain;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -24,6 +23,9 @@ public class Position {
     @NotNull
     @Min(2)
     private double longitude;
+
+    @NotNull
+    private boolean live;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date receiveTime;
@@ -58,6 +60,14 @@ public class Position {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public boolean isLive() {
+        return live;
+    }
+
+    public void setLive(boolean live) {
+        this.live = live;
     }
 
     public Date getReceiveTime() {

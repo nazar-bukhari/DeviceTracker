@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PositionRepository extends JpaRepository<Position,Long> {
-    List<Position> findTop2ByDeviceIdOrderByReceiveTimeDesc(long id);
+    List<Position> findTop2ByDeviceIdAndLiveTrueOrderByReceiveTimeDesc(long id);
 }

@@ -1,18 +1,62 @@
 {
-    "name": "BTV",
-    "hardwareId": 86001
+    "name": "NTV_Sports",
+    "hardwareId": 86001,
+    "organization": {
+    	"id": 1,
+    	"name": "NTV"
+    }
+}
+
+{
+    "name": "NTV_Business",
+    "hardwareId": 86002,
+    "organization": {
+    	"id": 1,
+    	"name": "NTV"
+    }
+}
+
+{
+    "name": "NTV_Politics",
+    "hardwareId": 86003,
+    "organization": {
+    	"id": 1,
+    	"name": "NTV"
+    }
+}
+
+{
+    "name": "BTV_Politics",
+    "hardwareId": 76001,
+    "organization": {
+    	"id": 2,
+    	"name": "BTV"
+    }
+}
+
+{
+    "name": "BTV_Sports",
+    "hardwareId": 76002,
+    "organization": {
+    	"id": 2,
+    	"name": "BTV"
+    }
 }
 
 
 {
 	"device":
 		{
-    "id": 3,
-    "name": "NTV",
-    "hardwareId": 86002,
-    "created": "2018-06-05T08:39:54.904+0000",
-    "updated": null
-},
-	"latitude":"23.5790",
-	"longitude":"90.6555"
+			"id": 2,
+		    "name": "NTV"
+		},
+	"latitude":"23.7500",
+	"longitude":"90.8500",
+	"live":true
 }
+
+
+
+INSERT INTO `device_tracker`.`organization` (`id`, `name`) VALUES ('1', 'NTV');
+INSERT INTO `device_tracker`.`organization` (`id`, `name`) VALUES ('2', 'BTV');
+

@@ -28,9 +28,9 @@ public class DeviceServiceImpl implements DeviceService {
 
         verifyDevice(device);
 
-        if(findDeviceByName(device.getName()) != null){
-            throw new DuplicateDomainFoundException("Device under same name already exists");
-        }
+//        if(findDeviceByName(device.getName()) != null){
+//            throw new DuplicateDomainFoundException("Device under same name already exists");
+//        }
 
         if(findDeviceByHardwareId(device.getHardwareId()) != null){
             throw new DuplicateDomainFoundException("Device under same hardwareId already exists");

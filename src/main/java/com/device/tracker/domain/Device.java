@@ -21,6 +21,10 @@ public class Device {
     @Min(5)
     private long hardwareId;
 
+    @NotNull
+    @ManyToOne
+    private Organization organization;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
@@ -49,6 +53,14 @@ public class Device {
 
     public void setHardwareId(long hardwareId) {
         this.hardwareId = hardwareId;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 
     public Date getCreated() {
