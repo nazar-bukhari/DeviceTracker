@@ -25,6 +25,9 @@ public class Device {
     @ManyToOne
     private Organization organization;
 
+    @NotNull
+    private long mobileNumber;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
@@ -61,6 +64,14 @@ public class Device {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public long getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(long mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     public Date getCreated() {
