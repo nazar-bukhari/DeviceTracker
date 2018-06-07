@@ -17,10 +17,10 @@ public class PositionController {
     @Autowired
     private PositionService positionService;
 
-    @RequestMapping(path = "/{deviceId}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "/{organizationId}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    private List<Position> getLastPosition(final @PathVariable long deviceId) throws ApplicationException {
-        return positionService.getPosition(deviceId);
+    private List<Position> getLastPosition(final @PathVariable long organizationId) throws ApplicationException {
+        return positionService.getPosition(organizationId);
     }
 
     @RequestMapping(method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)

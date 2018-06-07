@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PositionService {
 
-    List<Position> getPosition(long deviceId) throws ApplicationException;
+    List<Position> getPosition(long organizationId) throws ApplicationException;
     Position add(final Position position) throws ApplicationException;
 }
